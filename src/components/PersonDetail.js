@@ -19,6 +19,21 @@ class PersonDetail extends Component {
                   <div className="detailProfilePicContainer">
                     <img src={`/Albums/${p.name}/${p.profile_pic}.jpeg`} className="detail" alt="profile picture"/>
                   </div>
+                  <div className="detailRightSide">
+                    <div className="nameAndFollower">
+                      <h1>{p.profile_name}</h1>
+                      <button className="button">Follow</button>
+                      <button className="button">Message</button>
+                    </div>
+                    <div className="followerAndFollowing">
+                      <h1>{p.followers} <span>Followers</span></h1>
+                      <h1>{p.following} <span>Following</span></h1>
+                    </div>
+                    <div className="bio">
+                      <h1>About</h1>
+                      <p>{p.bio}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             )
