@@ -10,9 +10,20 @@ class PersonDetail extends Component {
 
   render() {
     return (
-      <div style={{color:'white'}}>
-        <h1>Hi I am PersonDetail</h1>
-        {this.props.match.params.name}
+      <div>
+        {
+          this.props.person && this.props.person.map(p => {
+            return (
+              <div key={p.id}>
+                <div className="detailContainer">
+                  <div className="detailProfilePicContainer">
+                    <img src={`/Albums/${p.name}/${p.profile_pic}.jpeg`} className="detail" alt="profile picture"/>
+                  </div>
+                </div>
+              </div>
+            )
+          })
+        }
       </div>
     )
   }
