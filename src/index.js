@@ -8,6 +8,7 @@ import promiseMiddleware from 'redux-promise';
 import {Provider} from 'react-redux';
 
 import {applyMiddleware, createStore} from 'redux';
+import PersonDetail from './components/PersonDetail';
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Heading></Heading>
       <Switch>
         <Route exact path='/' component={App}/>
+        <Route exact path='/:name' component={PersonDetail}/>
       </Switch>
     </BrowserRouter>
   </Provider>
