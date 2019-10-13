@@ -8,3 +8,14 @@ export const getPeople = () => {
     payload: getPeople
   }
 }
+
+export const personDetail = (name) => {
+
+  const getPeople = fetch(`http://localhost:3004/people?name=${name}`, {method:"GET"})
+                    .then(res => res.json())
+
+  return {
+    type:"PERSON_DETAIL",
+    payload:""
+  }
+}

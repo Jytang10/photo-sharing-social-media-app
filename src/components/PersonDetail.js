@@ -6,6 +6,7 @@ class PersonDetail extends Component {
     return (
       <div style={{color:'white'}}>
         <h1>Hi I am PersonDetail</h1>
+        {this.props.match.params.name}
       </div>
     )
   }
