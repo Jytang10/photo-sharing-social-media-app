@@ -4,13 +4,6 @@ import {getPeople} from '../actions';
 import PeopleList from './PeopleList';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-         
-    }
-  }
 
   componentDidMount(){
     this.props.getPeople();
@@ -19,14 +12,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PeopleList></PeopleList>
+        <PeopleList people={this.props.allPeople}></PeopleList>
       </div>
     )
   }
 }
 
 function mapStateToProps(state){
-  console.log('-------',state)
   return {
     allPeople: state.people.getPeople
   }

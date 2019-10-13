@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
 
 class PeopleList extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-         
-    }
-  }
 
   render() {
+    console.log('peoplelist.js', this.props.people)
     return (
-      <div>
+      <div style={{color:'white'}}>
         <p>I am from PeopleList</p>
       </div>
     )
