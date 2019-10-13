@@ -7,5 +7,8 @@ import Heading from './components/Heading';
 ReactDOM.render(
   <BrowserRouter>
     <Heading></Heading>
+    <Switch>
+      <Route exact path='/' component={App}/>
+    </Switch>
   </BrowserRouter>
   , document.getElementById('root'));
