@@ -8,11 +8,10 @@ export default function people_reducer(state = people,action){
         getPeople: action.payload
       }
     case "PERSON_DETAIL":
-      console.log(action.payload)
-      // return {
-      //   ...state,
-      //   personDetail: action.payload
-      // }
+      return {
+        ...state,
+        personDetail: action.payload
+      }
     default:
       return state
   }

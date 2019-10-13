@@ -18,10 +18,10 @@ class PersonDetail extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state)
-  return {
-
+// State comes from store. people is the rootReducer that combined all the reducers together. personDetail is what was returned in the PERSON_DETAIL switch case in the people_reducer.js 
+const mapStateToProps = (state) => {        
+  return {  
+    person : state.people.personDetail    
   }
 }
 

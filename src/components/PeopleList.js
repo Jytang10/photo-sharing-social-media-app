@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link, withRouter} from 'react-router-dom';
 
 class PeopleList extends Component {
 
@@ -6,7 +7,7 @@ class PeopleList extends Component {
     if(this.props.people !== undefined){
       return this.props.people.map(person => {
         return (
-          <div key={person.id} className="singleProfilePicContainer">
+          <Link to={`/${person.name}`} key={person.id} className="singleProfilePicContainer">
             <img className="profilePic" src={`Albums/${person.name}/${person.profile_pic}.jpeg`} alt="profile pic"/>
             <div>
               <h1 className="info">{person.name}</h1>
@@ -14,14 +15,14 @@ class PeopleList extends Component {
                 person.online_status === "on" && <img className="live" src="Albums/live.svg" alt="live"/>
               }
             </div>
-          </div>
+          </Link>
         )
       })
     }
   }
 
   render() {
-    console.log('peoplelist.js', this.props.people)
+    // console.log('peoplelist.js', this.props.people)
     return (
       <div className="allProfilePicContainer" style={{color:'white'}}>
         {this.renderPeople()}

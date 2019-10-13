@@ -11,11 +11,11 @@ export const getPeople = () => {
 
 export const personDetail = (name) => {
 
-  const getPeople = fetch(`http://localhost:3004/people?name=${name}`, {method:"GET"})
+  const getPerson = fetch(`http://localhost:3004/people?name=${name}`, {method:"GET"})
                     .then(res => res.json())
 
   return {
     type:"PERSON_DETAIL",
-    payload:""
+    payload: getPerson
   }
 }
