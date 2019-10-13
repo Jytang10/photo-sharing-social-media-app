@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+import {personDetail} from '../actions';
+import {connect} from 'react-redux';
 
 class PersonDetail extends Component {
+
+  componentDidMount(){
+    this.props.personDetail(this.props.match.params.name)
+  }
 
   render() {
     return (
@@ -12,4 +18,11 @@ class PersonDetail extends Component {
   }
 }
 
-export default PersonDetail
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps,{personDetail})(PersonDetail);
