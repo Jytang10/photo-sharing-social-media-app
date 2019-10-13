@@ -7,7 +7,7 @@ function Heading() {
         <h3>Photo App</h3>
       </div>
       <form>
-        <input type="text" placeholder="Search..." value="search"/>
+        <input type="text" placeholder="Search..." value="search" onChange={() => console.log()}/>
       </form>
     </div>
   )

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {getPeople} from '../actions';
 import PeopleList from './PeopleList';
 
 class App extends Component {
@@ -10,6 +12,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    this.props.getPeople();
+  }
+
   render() {
     return (
       <div>
@@ -19,4 +25,11 @@ class App extends Component {
   }
 }
 
-export default App
+function mapStateToProps(state){
+  console.log('-------',state)
+  return {
+    allPeople: state.people.getPeople
+  }
+}
+
+export default connect(mapStateToProps,{getPeople})(App)
